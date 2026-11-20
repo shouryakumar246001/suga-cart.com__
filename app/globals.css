@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer components {
+    @keyframes marqueeScroll {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@layer base {
+    button {
+        cursor: pointer;
+    }
+
+    body {
+        background-color: #fdf0f4;
+        background-image: 
+            radial-gradient(at 0% 0%, rgba(254, 215, 226, 0.8) 0px, transparent 55%),
+            radial-gradient(at 100% 0%, rgba(251, 207, 232, 0.75) 0px, transparent 55%),
+            radial-gradient(at 50% 50%, rgba(255, 240, 245, 0.9) 0px, transparent 70%),
+            radial-gradient(at 100% 100%, rgba(252, 214, 225, 0.7) 0px, transparent 55%),
+            radial-gradient(at 0% 100%, rgba(253, 226, 236, 0.75) 0px, transparent 55%);
+        background-attachment: fixed;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: url('/pastel_pink_bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.35;
+        pointer-events: none;
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
